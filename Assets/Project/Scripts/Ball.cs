@@ -1,11 +1,11 @@
 using UnityEngine;
 
+//used to determine the type of ball
 public enum BallType
 {
-    Purple,
+    Purple, 
     Red
 }
-
 
 public class Ball : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        // Move downward every frame
+        // Move downward every frame based on fall speed
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
     }
 }

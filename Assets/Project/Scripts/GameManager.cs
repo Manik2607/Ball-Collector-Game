@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public UIController uiController;
     public GameObject gameOverPanel;
 
+    public float PurpleBallTimeBonus = 10f; // Time bonus for every 10 purple balls
+    public float RedBallTimePenalty = 2f;   // Time penalty for red ball
     private bool isGameOver = false;
 
     void Awake()
@@ -38,13 +40,13 @@ public class GameManager : MonoBehaviour
         {
             score++;
             if (score % 10 == 0)
-                timeRemaining += 10f;
+                timeRemaining += PurpleBallTimeBonus;
             AudioManager.Instance.Play("purple");
         }
         else if (type == BallType.Red)
         {
-            score = Mathf.Max(0, score - 1);
-            timeRemaining = Mathf.Max(0, timeRemaining - 2f);
+            score = Mathf.Max(0, score - 1); // Decrease score by 1 on red ball collection
+            timeRemaining = Mathf.Max(0, timeRemaining - RedBallTimePenalty);
             AudioManager.Instance.Play("red");
         }
 
@@ -54,10 +56,10 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
-        gameOverPanel.SetActive(true); // show UI
-        Time.timeScale = 0f;           // pause game
+        gameOverPanel.SetActive(true); // Show game over UI
+        Time.timeScale = 0f;           // Pause the game
     }
-
+    // restart the game by reloading the current scene
     public void RestartGame()
     {
         Time.timeScale = 1f;

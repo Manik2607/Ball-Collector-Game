@@ -5,21 +5,18 @@ public class CollectorController : MonoBehaviour
     public float moveSpeed = 5f;
     private Camera mainCamera;
     private float halfWidth;
-
     void Start()
     {
         mainCamera = Camera.main;
 
-
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
-        halfWidth = collider.bounds.extents.x / 2.0f;
-
+        halfWidth = collider.bounds.extents.x / 2.0f; // Calculate half the width of the collector
     }
 
     void Update()
     {
-        float move = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * move * moveSpeed * Time.deltaTime);
+        float move = Input.GetAxis("Horizontal"); // Get horizontal input
+        transform.Translate(Vector3.right * move * moveSpeed * Time.deltaTime); // Move collector indepentent of the frame rate
 
         // Clamp the position to stay within the camera bounds
         Vector3 position = transform.position;
@@ -35,13 +32,13 @@ public class CollectorController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Ball")) // Ball enters the collector
+        if (other.CompareTag("Ball")) // Check if the object has the "Ball" tag
         {
             Ball ball = other.GetComponent<Ball>();
             if (ball != null)
             {
-                GameManager.Instance.OnBallCollected(ball.ballType);
-                Destroy(other.gameObject);
+                GameManager.Instance.OnBallCollected(ball.ballType); // Notify GameManager of ball collection
+                Destroy(other.gameObject); // Destroy the ball object
             }
         }
     }

@@ -562,7 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purpleBallPrefab: {fileID: 1174891579825718274, guid: 4561dab6c299fb7458d1b2385ec59d54, type: 3}
   redBallPrefab: {fileID: 7702512118614407107, guid: a48c674e40e314c43a9f92e4b1b7addf, type: 3}
-  RedBallProbability: 0.5
+  redBallProbability: 0.3
   spawnInterval: 0.3
 --- !u!1 &559274671
 GameObject:
@@ -664,6 +664,8 @@ MonoBehaviour:
   timeRemaining: 60
   uiController: {fileID: 1221931661}
   gameOverPanel: {fileID: 184101318}
+  PurpleBallTimeBonus: 10
+  RedBallTimePenalty: 2
 --- !u!1 &780228144
 GameObject:
   m_ObjectHideFlags: 0
