@@ -564,6 +564,57 @@ MonoBehaviour:
   redBallPrefab: {fileID: 7702512118614407107, guid: a48c674e40e314c43a9f92e4b1b7addf, type: 3}
   RedBallProbability: 0.5
   spawnInterval: 0.3
+--- !u!1 &559274671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559274673}
+  - component: {fileID: 559274672}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &559274672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559274671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8dbd1777b599814c8575149de342b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: purple
+    clip: {fileID: 8300000, guid: 0dd95fef1a9b95f4683f65ad0c7ff5ae, type: 3}
+    volume: 1
+  - name: red
+    clip: {fileID: 8300000, guid: 9d932bd5e9685ce4ea3e909dbf92de5e, type: 3}
+    volume: 1
+--- !u!4 &559274673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559274671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.043584403, y: 11.9, z: 0.07927726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &684034527
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82b7b79448f37746b53f965618bf646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  score: 1
   timeRemaining: 60
   uiController: {fileID: 1221931661}
   gameOverPanel: {fileID: 184101318}
@@ -1355,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88218e4440edfc429a081a83706e328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
 --- !u!50 &1583908994
 Rigidbody2D:
   serializedVersion: 5
@@ -1417,7 +1468,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0009973943, y: 0.21151006}
+  m_Offset: {x: 0.0009974241, y: 0.3175007}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1427,7 +1478,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1087015, y: 0.3555858}
+  m_Size: {x: 1.1087015, y: 0.1502831}
   m_EdgeRadius: 0
 --- !u!212 &1583908996
 SpriteRenderer:
@@ -1751,3 +1802,4 @@ SceneRoots:
   - {fileID: 1988495047}
   - {fileID: 1139967157}
   - {fileID: 1476384533}
+  - {fileID: 559274673}

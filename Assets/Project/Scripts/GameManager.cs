@@ -39,11 +39,13 @@ public class GameManager : MonoBehaviour
             score++;
             if (score % 10 == 0)
                 timeRemaining += 10f;
+            AudioManager.Instance.Play("purple");
         }
         else if (type == BallType.Red)
         {
             score = Mathf.Max(0, score - 1);
             timeRemaining = Mathf.Max(0, timeRemaining - 2f);
+            AudioManager.Instance.Play("red");
         }
 
         uiController.UpdateScore(score);
